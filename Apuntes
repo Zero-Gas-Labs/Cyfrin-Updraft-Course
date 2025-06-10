@@ -1,0 +1,45 @@
+1. Tipos de ubicación de datos para strings en Solidity
+
+    memory:
+
+        Temporal, existe solo durante la ejecución de la función.
+
+        Es modificable dentro de la función.
+
+        Se usa para parámetros o variables temporales.
+
+    storage:
+
+        Persistente, se guarda en el estado del contrato en la blockchain.
+
+        Se usa para variables de estado.
+
+    calldata (supongo que querías decir calldata y no input data):
+
+        Solo lectura, inmutable.
+
+        Es la ubicación por defecto para los parámetros externos en funciones external.
+
+        Más eficiente que memory para inputs de función.
+
+2. Override y virtual en Solidity
+
+Cuando quieres sobrescribir (override) una función heredada de un contrato padre:
+
+    En el contrato padre, la función debe declararse con la palabra clave virtual para indicar que puede ser sobreescrita.
+
+    En el contrato hijo, la función que la reemplaza debe usar la palabra clave override.
+
+Ejemplo:
+
+contract Padre {
+    function saludar() public virtual returns (string memory) {
+        return "Hola desde Padre";
+    }
+}
+
+contract Hijo is Padre {
+    function saludar() public override returns (string memory) {
+        return "Hola desde Hijo";
+    }
+}
