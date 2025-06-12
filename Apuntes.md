@@ -114,7 +114,7 @@ Un `mapping` es una estructura clave-valor similar a un diccionario.
 mapping(KeyType => ValueType) nombre;
 ```
 
-### Ejemplo b?sico:
+### Ejemplo básico:
 
 ```solidity
 mapping(address => uint) public saldos;
@@ -139,3 +139,7 @@ function consultarSaldo(address usuario) public view returns (uint) {
 - Se pueden anidar: `mapping(uint => mapping(address => bool))`.
 
 ---
+
+### INMUTABLE vs CONSTANT:
+    - CONSTANT se declara y se asigna un valor al mismo tiempo.
+    - INMUTABLE se declara y se puede asignar fuera o dentro del constructor.
